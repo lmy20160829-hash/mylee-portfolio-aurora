@@ -16,11 +16,14 @@
   --text: #aeb8d4;
   --muted: #7c86a6;
 
-  --indigo: #6a7bff;
-  --violet: #a668ff;
+  /* 블루 대표 컬러 체계 — OmniEsol 시연회 무드(로열 블루 #402abc·#3c36c4) 반영.
+     기존 변수명은 유지하되 값을 블루 패밀리로 통일(바이올렛→애저, 틸→스카이) */
+  --indigo: #5b6dff;
+  --violet: #3d7bff;
   --cyan: #4fd7ff;
-  --teal: #39e6c3;
-  --grad: linear-gradient(115deg, #7c8bff 0%, #a668ff 38%, #4fd7ff 78%, #39e6c3 100%);
+  --teal: #35c4ff;
+  --grad: linear-gradient(115deg, #8093ff 0%, #4d8dff 45%, #45c4ff 100%);
+  --grad-strong: linear-gradient(115deg, #4335d6 0%, #2f6ee0 100%);
 
   --accent: #8b9aff;
   --accent-deep: #9db1ff;
@@ -71,16 +74,16 @@ body {
   filter: blur(70px); opacity: 0.5; mix-blend-mode: screen; will-change: transform;
 }
 .aurora .b1 { width: 52vw; height: 52vw; left: -8vw; top: -10vw;
-  background: radial-gradient(circle at 30% 30%, rgba(106, 123, 255, 0.9), rgba(106, 123, 255, 0) 65%);
+  background: radial-gradient(circle at 30% 30%, rgba(76, 92, 255, 0.9), rgba(76, 92, 255, 0) 65%);
   animation: drift1 26s ease-in-out infinite; }
 .aurora .b2 { width: 46vw; height: 46vw; right: -10vw; top: 2vw;
-  background: radial-gradient(circle at 60% 40%, rgba(166, 104, 255, 0.8), rgba(166, 104, 255, 0) 65%);
+  background: radial-gradient(circle at 60% 40%, rgba(64, 42, 188, 0.85), rgba(64, 42, 188, 0) 65%);
   animation: drift2 32s ease-in-out infinite; }
 .aurora .b3 { width: 50vw; height: 50vw; left: 12vw; bottom: -16vw;
-  background: radial-gradient(circle at 50% 50%, rgba(79, 215, 255, 0.6), rgba(79, 215, 255, 0) 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(47, 125, 255, 0.6), rgba(47, 125, 255, 0) 65%);
   animation: drift3 30s ease-in-out infinite; }
 .aurora .b4 { width: 40vw; height: 40vw; right: 6vw; bottom: -6vw;
-  background: radial-gradient(circle at 50% 50%, rgba(57, 230, 195, 0.5), rgba(57, 230, 195, 0) 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(79, 215, 255, 0.5), rgba(79, 215, 255, 0) 65%);
   animation: drift4 36s ease-in-out infinite; }
 @keyframes drift1 { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 33% { transform: translate3d(6vw, 4vw, 0) scale(1.12); } 66% { transform: translate3d(-3vw, 7vw, 0) scale(0.96); } }
 @keyframes drift2 { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 40% { transform: translate3d(-7vw, 6vw, 0) scale(1.15); } 70% { transform: translate3d(4vw, -3vw, 0) scale(0.94); } }
@@ -121,12 +124,12 @@ body {
 .nav__link.active { color: var(--ink); background: var(--glass); }
 .nav__link.active::after { background: var(--teal); box-shadow: 0 0 8px var(--teal); }
 .nav__cta {
-  border-radius: 100px; background: var(--grad); background-size: 180% 180%;
-  color: #081018 !important; font-weight: 700;
-  box-shadow: 0 10px 30px -12px rgba(120, 139, 255, 0.7);
+  border-radius: 100px; background: var(--grad-strong); background-size: 180% 180%;
+  color: #fff !important; font-weight: 700;
+  box-shadow: 0 10px 30px -12px rgba(64, 86, 230, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   animation: sheen 7s ease infinite;
 }
-.nav__cta:hover { background: var(--grad); background-size: 180% 180%; filter: brightness(1.08); }
+.nav__cta:hover { background: var(--grad-strong); background-size: 180% 180%; filter: brightness(1.12); }
 .nav__toggle span { background: var(--ink); }
 @media (max-width: 860px) {
   .nav__menu {
@@ -143,12 +146,12 @@ body {
 .btn .arw, .btn .arrow { transition: transform 0.25s; }
 .btn:hover .arw, .btn:hover .arrow { transform: translateX(4px); }
 .btn--primary {
-  background: var(--grad); background-size: 180% 180%;
-  color: #081018;
-  box-shadow: 0 14px 40px -14px rgba(120, 139, 255, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: var(--grad-strong); background-size: 180% 180%;
+  color: #fff;
+  box-shadow: 0 14px 40px -14px rgba(64, 86, 230, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   animation: sheen 7s ease infinite;
 }
-.btn--primary:hover { background: var(--grad); background-size: 180% 180%; box-shadow: 0 22px 55px -14px rgba(120, 139, 255, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.5); }
+.btn--primary:hover { background: var(--grad-strong); background-size: 180% 180%; filter: brightness(1.1); box-shadow: 0 22px 55px -14px rgba(64, 86, 230, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
 .btn--light { color: var(--ink); border-color: var(--line-strong); background: var(--glass); }
 .btn--light:hover { background: rgba(255, 255, 255, 0.11); color: var(--ink); border-color: rgba(255, 255, 255, 0.28); }
 .btn--ghost-dark {
@@ -339,7 +342,7 @@ body {
 .module--app .module__status::before { background: var(--cyan); box-shadow: 0 0 0 3px rgba(79, 215, 255, 0.18); }
 .module--app::before { background: radial-gradient(320px 200px at var(--mx, 50%) var(--my, 0%), rgba(120, 139, 255, 0.16), transparent 70%); }
 .build-group-title { color: var(--ink); }
-.build-group-title span { background: var(--grad); color: #081018; }
+.build-group-title span { background: var(--grad-strong); color: #fff; }
 .build-group-title em { color: var(--muted); }
 
 /* 소개 프로필 카드 */
@@ -359,13 +362,13 @@ body {
 .timeline::before { background: var(--line-strong); }
 .tnode::before { background: var(--bg); border-color: var(--indigo); box-shadow: 0 0 10px rgba(106, 123, 255, 0.5); }
 .tnode--milestone::before { background: var(--indigo); }
-.tnode--final::before { background: var(--teal); border-color: var(--teal); box-shadow: 0 0 12px rgba(57, 230, 195, 0.6); }
+.tnode--final::before { background: var(--teal); border-color: var(--teal); box-shadow: 0 0 12px rgba(53, 196, 255, 0.6); }
 .tnode__year { color: var(--accent-deep); }
 .tnode__card { background: var(--glass-grad); border-color: var(--line); border-radius: 18px; }
 .tnode__card:hover { background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)); }
 .tnode__card h4 { color: var(--ink); }
 .tnode__card p { color: var(--text); }
-.tnode--final .tnode__card { background: linear-gradient(160deg, rgba(57, 230, 195, 0.1), rgba(79, 215, 255, 0.04)); border-color: rgba(57, 230, 195, 0.3); }
+.tnode--final .tnode__card { background: linear-gradient(160deg, rgba(53, 196, 255, 0.1), rgba(79, 215, 255, 0.04)); border-color: rgba(53, 196, 255, 0.3); }
 .tnode--final .tnode__card h4 { color: var(--ink); }
 .tnode--final .tnode__card p { color: var(--text); }
 

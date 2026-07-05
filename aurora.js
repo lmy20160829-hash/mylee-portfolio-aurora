@@ -15,7 +15,7 @@
       var ctx = cv.getContext("2d");
       var W, H, DPR = Math.min(window.devicePixelRatio || 1, 2);
       var parts = [];
-      var COLORS = ["rgba(106,123,255,", "rgba(166,104,255,", "rgba(79,215,255,", "rgba(57,230,195,"];
+      var COLORS = ["rgba(76,92,255,", "rgba(61,123,255,", "rgba(79,215,255,", "rgba(53,196,255,"];
       var resize = function () {
         W = cv.width = innerWidth * DPR;
         H = cv.height = innerHeight * DPR;
